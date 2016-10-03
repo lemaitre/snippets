@@ -29,17 +29,17 @@ static void setc4b8(void * info) {
 
 static void clearc4b8(void * info) {
   printc4();
-  //__asm__("push   %rax\n\t"
-  //  "push   %rbx\n\t"
-  //  "mov    %cr4,%rax;\n\t"
-  //  "mov  $(1 << 8), %rbx\n\t"
-  //  "not  %rbx\n\t"
-  //  "and   %rbx, %rax;\n\t"
-  //  "mov    %rax,%cr4;\n\t"
-  //  "wbinvd\n\t"
-  //  "pop    %rbx\n\t"
-  //  "pop    %rax\n\t"
-  //);
+  __asm__("push   %rax\n\t"
+    "push   %rbx\n\t"
+    "mov    %cr4,%rax;\n\t"
+    "mov  $(1 << 8), %rbx\n\t"
+    "not  %rbx\n\t"
+    "and   %rbx, %rax;\n\t"
+    "mov    %rax,%cr4;\n\t"
+    "wbinvd\n\t"
+    "pop    %rbx\n\t"
+    "pop    %rax\n\t"
+  );
   printk(KERN_INFO "Ran on Processor %d", smp_processor_id());
 }
 
