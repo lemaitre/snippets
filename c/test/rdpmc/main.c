@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <linux/perf_event.h>
-#include "../../rdpmc.h"
-#include "../../rdpmc.c"
+#include "../../timer/rdpmc.h"
+#include "../../timer/rdpmc.c"
 
 
 //void test() {
